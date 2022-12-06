@@ -1,0 +1,18 @@
+<%- include("./partials/header") -%>
+
+<div class="card mx-auto my-5"style="width: 22rem;">
+  <div class="card-body">
+    <h3 class="card-title">FIND VEHICLE</h3>
+    <form method="post" action="/findVehicle">
+      <div class="mb-3">
+        <label  class="form-label">FIND VEHICLE</label>
+        <input autocomplete="off" type="text" class="form-control" name="plate" placeholder="enter plate id" required>
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+  </div>
+
+</div>
+
+
+      <%- include("./partials/footer") -%> 

@@ -1,0 +1,58 @@
+body{
+    background-color:#F8EDE3;
+}
+
+
+nav{
+    padding-bottom: 10%;
+   background-color:#182747;
+}
+
+  
+  
+  .nav-cont{
+    padding-left:  5rem;
+    padding-right: 6.875rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    
+}
+
+.nav-link{
+    margin-right: 2rem;
+}
+
+.navbar-nav{
+    padding-right: 5rem;
+}
+
+
+
+.details{
+    margin: 2% 2% 5% 2%;
+    padding: 2%;
+}
+.link{
+    color: white;
+    text-decoration: none;
+}
+.link:hover{
+    color: white;
+}
+
+.month-btn{
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.daily-sale:focus{
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline
+
+}
+@media print {
+    #print{
+        display: none;
+    }
+}

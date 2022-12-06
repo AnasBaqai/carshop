@@ -1,0 +1,79 @@
+<%- include("./partials/header") -%>
+    <!-- <form action="/previousAttendance" class="mt-5" method="post">
+    <div class="row">
+      <div class="mb-5 col-lg-4 col-md-3 col-sm-6 col-6">
+        <label for="" class="mb-3"><b>VIEW PREVIOUS DAYS ATTENDANCE</b></label>
+        <input type="date" name="prevDate">
+      </div>
+      <div class="mb-5 col-lg-1 col-md-3 col-sm-6 col-6">
+        <button type="submit" class="btn btn-lg btn-danger ">GO</button>
+      </div>
+
+    </div>
+
+  </form> -->
+
+    <div class="details">
+        <h1 class="mb-3">DATE:<%=date%>
+        </h1>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">EMPLOYEE ID</th>
+                        <th scope="col">EMPLOYEE NAME</th>
+                        <th scope="col">BRANCH</th>
+                        <th scope="col">DATE</th>
+                        <th scope="col">SALARY</th>
+                        <th scope="col">STATUS</th>
+                        <th scope="col">UPDATE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% employees.forEach(function(employee){ %>
+                        <form action="/salary" method="post">
+                            <tr>
+                                <th scope="row">
+                                    <%= employee.employee_id %>
+                                </th>
+                                <td scope="row">
+                                    <%= employee.employee_name %>
+                                </td>
+                                <td scope="row">
+                                    <%= employee.branch %>
+                                </td>
+                                <td>
+                                    <%= month %>
+                                </td>
+                                <td>
+                                    <%= employee.salary %>
+                                </td>
+                                <td>
+                                    <%=employee.paid_status%>
+                                </td>
+
+
+                                <!-- <form action="/individual/attendance" method="post"> 
+                   <select class="form-control" name="category" size="1" style="width: 5rem;">
+                    <option value="<%=employee.paid_status%>"><%=employee.paid_status%></option>
+                    <option value="paid">paid</option>
+                    <input type="hidden" name="id" value="<%= employee.employee_id   %>">
+                  </select>   -->
+
+                                <td>
+                                    <button type="submit" class=" btn btn-sm btn-dark" name="employeeID"
+                                        value="<%=employee.employee_id%>">update</button>
+                                    <input type="hidden" name="pDate" value="<%=date%>">
+                                </td>
+                                <!-- </form> -->
+
+                                <!-- 
+                <td><a class="btn btn-sm btn-dark" href="/attendance/<%= employee.employee_id%>">see more</a></td> -->
+                            </tr>
+                        </form>
+                        <% }) %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>

@@ -1,0 +1,47 @@
+<%- include("./partials/userHeader") -%>
+
+<% vehicles.forEach(function(vehicle,index){ %>
+
+    <div class="card mx-4 my-5  col-lg-4 col-md-4 col-sm-6 col-6" style="width: 25rem; height: 30rem;">
+        <div class="card-body">
+          <center>  <h2 class="card-title my-3"> Vehicle Number:<%= index+1 %></h2></center>
+
+            <div class="row">
+
+                <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <label class="form-label">Company</label>
+                    <input autocomplete="off" type="text" class="form-control" name="company"
+                        value="<%=vehicle.company%>" readonly>
+                </div>
+                <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <label class="form-label">Model*</label>
+                    <input autocomplete="off" type="text" class="form-control" name="model"
+                        value="<%=vehicle.model%>" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <label class="form-label">Year*</label>
+                    <input autocomplete="off" type="number" class="form-control"  name="year" value="<%=vehicle.year%>" readonly>
+                </div>
+                <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <label class="form-label">customer cnic*</label>
+                    <input autocomplete="off" type="number" class="form-control" name="cnic"
+                        value="<%=vehicle.cnic%>" readonly>
+                </div>
+            </div>
+            <div class="row ">
+                <div class=" mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <label class="form-label">Registration Number*</label>
+                    <input autocomplete="off" type="text" class="form-control" name="plate"
+                        value="<%=vehicle.plate%>" readonly>
+                </div>
+
+            </div>
+            <a href="/specService/<%=vehicle.plate%>" class="btn btn-lg btn-dark">services done</a>
+
+
+        </div>
+    </div>
+<% }) %>
+

@@ -1,0 +1,151 @@
+<%- include("./partials/header") -%>
+
+  <div class="row">
+    <div class="card mx-4 my-5  col-lg-5 col-md-6 col-sm-6 col-6" style="width: 35rem;">
+      <div class="card-body">
+        <h2 class="card-title">Service Form</h2>
+        <form action="/plate" method="post" style="width: 22rem;">
+          <div class="row">
+            <div class="mb-3 col-lg-8 col-md-8 col-sm-8 col-8">
+              <label class="form-label">enter number plate*</label>
+              <input autocomplete="off" type="text" class="form-control" name="plate" placeholder="enter number plate"
+                required>
+            </div>
+            <div class="mb-3 col-lg-4 col-md-4 col-sm-4 col-4 my-4">
+              <button type="submit" class="btn btn-md btn-dark my-2"> submit</button>
+            </div>
+          </div>
+        </form>
+        <form method="post" action="/register">
+          <div class="row">
+            <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">Customer Name</label>
+              <input autocomplete="off" type="text" class="form-control" name="customerName"
+                placeholder="enter Customer Name" required>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">customer cnic*</label>
+              <input autocomplete="off" type="number" class="form-control" name="cnic" value="<%=cnic%>" readonly>
+            </div>
+            <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">Vehicle Number Plate*</label>
+              <input autocomplete="off" type="text" class="form-control" name="plate" value="<%=plate%>" readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">date*</label>
+              <input autocomplete="off" type="date" class="form-control" name="date" required>
+            </div>
+            <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">Branch Number*</label>
+              <input autocomplete="off" type="number" class="form-control" name="branch" required>
+            </div>
+          </div>
+          <div class="row ">
+            <div class=" mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">Enter Customer complain*</label>
+              <textarea name="complain" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class=" mb-3 col-lg-6 col-md-6 col-sm-6 col-6 ">
+              <label class="form-label">Enter Services Provided</label>
+              <textarea name="service" id="" cols="30" rows="10"></textarea>
+            </div>
+          </div>
+
+          <div class="mb-3 ">
+            <label class="form-label">Enter Total Amount*</label>
+            <input autocomplete="off" type="number" class="form-control" name="total">
+          </div>
+
+          <button type="submit" class="btn btn-dark">Register <i class="fa-solid fa-id-card fa-lg"></i></button>
+        </form>
+
+      </div>
+    </div>
+
+
+    <div class="card  mx-4 my-5  col-lg-5 col-md-4 col-sm-6 col-6" style="width: 25rem; height: 30rem;">
+      <div class="card-body">
+        <h2 class="card-title">Vehicle Registration Form</h2>
+        <form method="post" action="/register/vehicle">
+          <div class="row">
+
+            <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">Company</label>
+              <input autocomplete="off" type="text" class="form-control" name="company" placeholder="enter Company"
+                required>
+            </div>
+            <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">Model*</label>
+              <input autocomplete="off" type="text" class="form-control" name="model" placeholder="Enter Model"
+                required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">Year*</label>
+              <input autocomplete="off" type="number" class="form-control" name="year" required>
+            </div>
+            <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">customer cnic*</label>
+              <input autocomplete="off" type="number" class="form-control" name="cnic" placeholder="enter cnic number"
+                required>
+            </div>
+          </div>
+          <div class="row ">
+            <div class=" mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">Registration Number*</label>
+              <input autocomplete="off" type="text" class="form-control" name="plate"
+                placeholder="Enter vehicle plate number" required>
+            </div>
+            <div class=" mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+              <label class="form-label">branch*</label>
+              <input autocomplete="off" type="text" class="form-control" name="branch" placeholder="Enter branch number"
+                required>
+            </div>
+
+          </div>
+
+
+          <button type="submit" class="btn btn-dark">Register <i class="fa-solid fa-id-card fa-lg"></i></button>
+        </form>
+
+      </div>
+    </div>
+
+    <form action="" method="get">
+      <div class="btn-group mb-5" role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-dark" ><a href="/salary" class="link">salary</a></button>
+        <button type="button" class="btn btn-dark" ><a href="/salary/history" class="link">salary history</a></button>
+
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            GENERATE
+          </button>
+          <ul class="dropdown-menu " aria-labelledby="btnGroupDrop1">
+            <li><a class="dropdown-item" href="/dailysales">daily sale summary</a></li>
+            <li><a class="dropdown-item" href="/monthlySales">monthly sale summary</a></li>
+          </ul>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <%- include("./partials/footer") -%>

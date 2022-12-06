@@ -1,0 +1,49 @@
+<%- include("./partials/header") -%>
+
+<div class="card mx-auto my-5  col-lg-5 col-md-6 col-sm-6 col-6" style="width: 35rem;">
+    <div class="card-body" >
+      <h2 class="card-title">EMPLOYEE REGISTRATION</h2>
+      <form method="post" action="/register/employee">
+        <div class="row">
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">Employee Name</label>
+            <input autocomplete="off" type="text" class="form-control" name="employeeName" placeholder="enter employee Name" required>
+          </div>
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">Employee Phone number*</label>
+            <input autocomplete="off" type="number" class="form-control" name="phone" required>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">Employee cnic*</label>
+            <input autocomplete="off" type="number" class="form-control" name="cnic" placeholder="enter cnic number" required>
+          </div>
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">employee salary*</label>
+            <input autocomplete="off" type="text" class="form-control" name="salary" placeholder="Enter employee monthly salary" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label"> hire date*</label>
+            <input autocomplete="off" type="date" class="form-control" name="date" required>
+          </div>
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">Employee Branch Number*</label>
+            <input autocomplete="off" type="number" class="form-control" name="branch" required>
+          </div>
+        </div>
+        
+       
+        <div class="mb-3 ">
+          <label class="form-label">Enter address*</label>
+          <input autocomplete="off" type="text" class="form-control" name="address" >
+        </div>
+      
+        <button type="submit" class="btn btn-dark">Register <i class="fa-solid fa-id-card fa-lg"></i></button>
+      </form>
+
+    </div>
+  </div>

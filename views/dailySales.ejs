@@ -1,0 +1,97 @@
+<%- include("./partials/header") -%>
+
+    <style>
+        input {
+            background: transparent;
+            border: none;
+        }
+    </style>
+    <br>
+    <div>
+        <h1>REPORT</h1>
+        <h3>
+            Services Provided up till now:<%=services.length%>
+        </h3>
+        <h3>
+            total income of today:<%=total%>
+        </h3>
+    </div>
+    <hr>
+    <div class="details">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">CUSTOMER NAME</th>
+                        <th scope="col">CNIC</th>
+                        <th scope="col">VEHICLE NO#</th>
+                        <th scope="col">SERVICE DATE</th>
+                        <!-- <th scope="col">COMPLAIN</th>
+              <th scope="col">SERVICE PROVIDED</th> -->
+                        <th scope="col">BRANCH</th>
+                        <th scope="col">TOTAL AMOUNT</th>
+
+                        <th scope="col" id="print">DETAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% services.forEach(function(service){ %>
+                        <tr>
+                            <th scope="row">
+                                <input type="text" value=" <%= service.customerName %>" name="id"
+                                    style="width: 5rem; border: 0;" readonly="true">
+                            </th>
+                            <th scope="row">
+                                <input type="text" value=" <%= service.cnic %>" name="id"
+                                    style="width: 5rem; border: 0;" readonly="true">
+                            </th>
+                            <th scope="row">
+                                <input type="text" value="  <%= service.vehicle %>" style="width: 5rem; border: 0;"
+                                    readonly="true">
+                            </th>
+                            <td>
+                                <input type="text" value=" <%= service.serviceDate %>" name="class"
+                                    style="width: 5rem; border: 0;" readonly="true">
+                            </td>
+                            <!-- <td>
+                   <input type="text"  value=" <%= service.complain %>"style="width: 10rem; border: 0;" readonly="true"> 
+                  </td>
+                  <td>
+                    <input type="text"  value=" <%= service.serviceProvided %>"style="width: 10rem; border: 0;" readonly="true"> 
+                   </td> -->
+                            <td>
+                                <input type="text" value=" <%= service.branch %>" style="width: 3rem; border: 0;"
+                                    readonly="true">
+                            </td>
+                            <td>
+                                <input type="text" value=" <%= service.total %>" style="width: 10rem; border: 0;"
+                                    readonly="true">
+                            </td>
+                            <td>
+                                <a href="/detail/Service/<%=service.id%>" id="print"
+                                    class="btn btn-sm btn-dark">detail</a>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+
+                </tbody>
+            </table>
+        </div>
+        <button id="print" onclick="window.print()" class="btn btn-lg btn-dark my-5">PRINT <i
+                class="fa-solid fa-print fa-lg"></i></button>
+       
+    </div>
+    <%- include("./partials/footer") -%>
+    <div class="month-btn">
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <%for(var i=1;i<=31;i++){%>
+                    <a type="button" class="btn btn-dark " id="daily-sale<%=i%>" href="/dailyrecord/<%=i%>">
+                        <%=i%>
+                    </a>
+                  
+                    <%}%>
+            </div>
+        </div>
+    </div>

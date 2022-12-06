@@ -1,0 +1,56 @@
+
+<%- include("./partials/userHeader") -%>
+
+
+  <div class="card mx-4 my-5  col-lg-5 col-md-6 col-sm-6 col-6" style="width: 35rem;">
+    <div class="card-body" >
+      <h2 class="card-title">Service id: <%=service[0].id%> </h2>
+      
+        <div class="row">
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">Customer Name</label>
+            <input autocomplete="off" type="text" class="form-control" name="customerName" value="<%=service[0].customerName%>" readonly="true">
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">customer cnic*</label>
+            <input autocomplete="off" type="number" class="form-control" name="cnic" value="<%=service[0].cnic%>" readonly="true">
+          </div>
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">Vehicle Number Plate*</label>
+            <input autocomplete="off" type="text" class="form-control" name="plate" value="<%=service[0].vehicle%>" readonly="true">
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">date*</label>
+            <input autocomplete="off" type="text" class="form-control" name="date" value="<%=service[0].serviceDate%>" readonly>
+          </div>
+          <div class="mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label">Branch Number*</label>
+            <input autocomplete="off" type="number" class="form-control" value="<%=service[0].branch%>" readonly>
+          </div>
+        </div>
+        <div class="row ">
+          <div class=" mb-3 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label class="form-label"> Customer complain*</label>
+            <textarea name="complain" id="" cols="30" rows="10" readonly><%=service[0].complain%></textarea>
+          </div>
+          <div class=" mb-3 col-lg-6 col-md-6 col-sm-6 col-6 ">
+            <label class="form-label"> Services Provided</label>
+            <textarea name="service" id="" cols="30" rows="10" readonly><%=service[0].serviceProvided%></textarea>
+          </div>
+        </div>
+       
+        <div class="mb-3 ">
+          <label class="form-label"> Total Amount*</label>
+          <input autocomplete="off" type="number" class="form-control" name="total" value="<%=service[0].total%>" readonly>
+        </div>
+      
+       
+      
+
+    </div>
+  </div>

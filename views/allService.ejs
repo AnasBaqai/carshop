@@ -1,0 +1,70 @@
+<%- include("./partials/userHeader") -%>
+
+<style>
+    input {
+        background:transparent;
+  border: none;
+  }
+  </style>
+  <br>
+  <h1>
+    Services Provided up till now:<%=services.length%>
+  </h1>
+  <hr>
+    <div class="details">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">CUSTOMER NAME</th>
+              <th scope="col">CNIC</th>
+              <th scope="col">VEHICLE NO#</th>
+              <th scope="col">SERVICE DATE</th>
+              <!-- <th scope="col">COMPLAIN</th>
+              <th scope="col">SERVICE PROVIDED</th> -->
+              <th scope="col">BRANCH</th>
+              <th scope="col">TOTAL AMOUNT</th>
+           
+              <th scope="col" id="print">DETAIL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% services.forEach(function(service){ %>
+              <tr>
+                <th scope="row">
+                  <input type="text"  value=" <%= service.customerName %>" name="id" style="width: 5rem; border: 0;" readonly="true">
+                 </th>
+                  <th scope="row">
+                   <input type="text"  value=" <%= service.cnic %>" name="id" style="width: 5rem; border: 0;" readonly="true">
+                  </th>
+                  <th scope="row" >
+                  <input type="text"  value="  <%= service.vehicle %>"style="width: 5rem; border: 0;" readonly="true" >
+                  </th>
+                  <td >
+                   <input type="text" value=" <%= service.serviceDate %>" name="class"style="width: 5rem; border: 0;" readonly="true">
+                  </td>
+                  <!-- <td>
+                   <input type="text"  value=" <%= service.complain %>"style="width: 10rem; border: 0;" readonly="true"> 
+                  </td>
+                  <td>
+                    <input type="text"  value=" <%= service.serviceProvided %>"style="width: 10rem; border: 0;" readonly="true"> 
+                   </td> -->
+                   <td>
+                    <input type="text"  value=" <%= service.branch %>"style="width: 3rem; border: 0;" readonly="true"> 
+                   </td>
+                   <td>
+                    <input type="text"  value=" <%= service.total %>"style="width: 10rem; border: 0;" readonly="true"> 
+                   </td>
+                   <td>
+                    <a href="/detail/Service/<%=service.id%>" id="print" class="btn btn-sm btn-dark">detail</a>
+                   </td>
+              </tr>
+  
+              <% }) %>
+  
+          </tbody>
+        </table>
+      </div>
+      <button id="print" onclick="window.print()" class="btn btn-lg btn-dark my-5">PRINT <i
+        class="fa-solid fa-print fa-lg"></i></button>
+    </div>

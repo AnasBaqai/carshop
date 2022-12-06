@@ -1,0 +1,76 @@
+<%- include("./partials/header") -%>
+<%
+function convert(str) {
+    var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [date.getFullYear(), mnth, day].join("-");
+  }
+  
+
+%>
+
+    <div class="details">
+        <h1 class="mb-3">DATE:<%=date%>
+        </h1>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">EMPLOYEE ID</th>
+                        <th scope="col">EMPLOYEE NAME</th>
+                        <th scope="col">BRANCH</th>
+                        <th scope="col">DATE</th>
+                        <th scope="col">SALARY</th>
+                        <th scope="col">STATUS</th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    <% employees.forEach(function(employee){ %>
+                        <form action="/salary" method="post">
+                            <tr>
+                                <th scope="row">
+                                    <%= employee.employee_id %>
+                                </th>
+                                <td scope="row">
+                                    <%= employee.employee_name %>
+                                </td>
+                                <td scope="row">
+                                    <%= employee.branch %>
+                                </td>
+                                <td>
+                                    <%= convert(employee.month_date) %>
+                                </td>
+                                <td>
+                                    <%= employee.salary %>
+                                </td>
+                                <td>
+                                    <%=employee.paid_status%>
+                                </td>
+
+
+                                <!-- <form action="/individual/attendance" method="post"> 
+                   <select class="form-control" name="category" size="1" style="width: 5rem;">
+                    <option value="<%=employee.paid_status%>"><%=employee.paid_status%></option>
+                    <option value="paid">paid</option>
+                    <input type="hidden" name="id" value="<%= employee.employee_id   %>">
+                  </select>   -->
+<!-- 
+                                <td>
+                                    <button type="submit" class=" btn btn-sm btn-dark" name="employeeID"
+                                        value="<%=employee.employee_id%>">update</button>
+                                    <input type="hidden" name="pDate" value="<%=date%>">
+                                </td> -->
+                                <!-- </form> -->
+
+                                <!-- 
+                <td><a class="btn btn-sm btn-dark" href="/attendance/<%= employee.employee_id%>">see more</a></td> -->
+                            </tr>
+                        </form>
+                        <% }) %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>

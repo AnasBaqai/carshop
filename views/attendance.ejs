@@ -1,0 +1,80 @@
+<%- include("./partials/header") -%>
+  <form action="/previousAttendance" class="mt-5" method="post">
+    <div class="row">
+      <div class="mb-5 col-lg-4 col-md-3 col-sm-6 col-6">
+        <label for="" class="mb-3"><b>VIEW PREVIOUS DAYS ATTENDANCE</b></label>
+        <input type="date" name="prevDate">
+      </div>
+      <div class="mb-5 col-lg-1 col-md-3 col-sm-6 col-6">
+        <button type="submit" class="btn btn-lg btn-danger ">GO</button>
+      </div>
+
+    </div>
+
+  </form>
+  <form action="/attendance" method="post">
+    <div class="details">
+
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">EMPLOYEE ID</th>
+              <th scope="col">EMPLOYEE NAME</th>
+              <th scope="col">CNIC</th>
+              <th scope="col">BRANCH</th>
+              <th scope="col">PHONE</th>
+              <th scope="col">ATTENDANCE</th>
+              <th scope="col">UPDATE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% employees.forEach(function(employee){ %>
+              <tr>
+                <th scope="row">
+                  <%= employee.employee_id %>
+                </th>
+                <td scope="row">
+                  <%= employee.employee_name %>
+                </td>
+                <td>
+                  <%= employee.cnic %>
+                </td>
+                <td>
+                  <%= employee.branch %>
+                </td>
+                <td>
+                  <%= employee.phone %>
+                </td>
+
+
+                <td>
+                  <!-- <form action="/individual/attendance" method="post"> -->
+                  <select class="form-control" name="category" size="1" style="width: 3rem;">
+                    <option value="P">P</option>
+                    <option value="A">A</option>
+                    <input type="hidden" name="id" value="<%= employee.employee_id   %>">
+                  </select>
+
+                <td>
+                  <button type="submit" class=" btn btn-sm btn-dark" formaction="/individual/attendance"
+                    name="employeeID" value="<%=employee.employee_id%>">update</button>
+                    <input type="hidden" name="pDate" value="<%=employee.pDate%>">
+                </td>
+                <!-- </form> -->
+                </td>
+
+                <td><a class="btn btn-sm btn-dark" href="/attendance/<%= employee.employee_id%>">see more</a></td>
+              </tr>
+
+              <% }) %>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-dark  my-3" name="save" value="save">SAVE</button>
+    <button type="submit" class="btn btn-dark  my-3" name="update" value="update"
+      formaction="/update/attendance">UPDATE</button>
+
+  </form>
