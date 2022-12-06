@@ -29,8 +29,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-mongoose.connect("mongodb://localhost:27017/carshopDB");
+mongoose.connect("mongodb+srv://anasbaqai:An12as34@cluster0.uuocn2n.mongodb.net/carshopDB");
+// mongoose.connect("mongodb://localhost:27017/carshopDB");
 
 const usersSchema = new mongoose.Schema({
     username: String,
